@@ -31,8 +31,8 @@ typedef struct Point Point;
 typedef struct Color Color;
 
 int r = 350;
-int x = 0;
-int y = 0;
+int x;
+int y;
 
 bool running = false;
 
@@ -152,6 +152,8 @@ int main(int argc , char **argv){
     glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_CONTINUE_EXECUTION);
     glutInitWindowSize(WIN_WIDTH,WIN_HEIGHT); // 1280 x 720 Window size
     glutCreateWindow("Circle");
+
+    reset_circle();
     init();
 
     glutMouseFunc(mouse_action);
