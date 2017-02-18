@@ -154,7 +154,7 @@ void mouse_action(int button, int m_state, int m_x, int m_y){
     
 }
 
-void keyboard_action(int key, int x, int y){
+void keyboard_action(unsigned char key, int x, int y){
     switch(key) {
         case ' ': running = !running; break;
     }
