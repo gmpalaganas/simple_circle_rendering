@@ -138,7 +138,7 @@ void mouse_action(int button, int m_state, int m_x, int m_y){
     
 }
 
-void keyboard_action(int key, int x, int y){
+void keyboard_action(unsigned char key, int x, int y){
     switch(key) {
         case ' ': running = !running; break;
     }
@@ -150,13 +150,14 @@ int main(int argc , char **argv){
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_CONTINUE_EXECUTION);
-    glutInitWindowSize(WIN_WIDTH,WIN_HEIGHT); // 1280 x 720 Window size
+    glutInitWindowSize(WIN_WIDTH,WIN_HEIGHT);
     glutCreateWindow("Circle");
 
     reset_circle();
     init();
 
     glutMouseFunc(mouse_action);
+    glutKeyboardFunc(keyboard_action);
 
     glutDisplayFunc(draw_circle);
     glutIdleFunc(draw_circle);
